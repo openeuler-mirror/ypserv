@@ -1,0 +1,13 @@
+# The specified directory path of the passwd and shadow files.
+#ETCDIR=/etc
+
+# The passwd file used by rpc.yppasswdd
+# You can't mix usage of this with ETCDIR
+#PASSWDFILE=/etc/passwd
+
+# The shadow file used by rpc.yppasswdd
+# You can't mix usage of this with ETCDIR
+#SHADOWFILE=/etc/shadow
+
+# Additional arguments passed to yppasswd
+YPPASSWDD_ARGS=

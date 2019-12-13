@@ -1,6 +1,6 @@
 Name:		ypserv
 Version:	4.1
-Release:        1
+Release:        2
 Summary:	The NIS server
 License:	GPLv2
 URL:		http://www.linux-nis.org/nis/ypserv/index.html
@@ -106,5 +106,11 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
+* Thu Nov 7 2019 openEuler Buildteam <buildteam@openeuler.org> - 4.1-2
+- Type:enhancement
+- Id:NA
+- SUG:NA
+- DESC:modify the release
+
 * Mon Sep 9 2019 luhuaxin <luhuaxin@huawei.com> - 4.1-1
 - Package init

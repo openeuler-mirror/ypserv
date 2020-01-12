@@ -1,6 +1,6 @@
 Name:		ypserv
 Version:	4.1
-Release:        3
+Release:        4
 Summary:	The NIS server
 License:	GPLv2
 URL:		http://www.linux-nis.org/nis/ypserv/index.html
@@ -11,7 +11,6 @@ Source3: 	ypxfrd.service
 Source4: 	rpc.yppasswdd.env
 Source5: 	yppasswdd-pre-setdomain
 Source6:	yppasswdd
-Patch0: 	ypserv-2.5-redhat.patch
 Patch1: 	ypserv-2.5-nfsnobody2.patch
 Patch2: 	ypserv-2.13-ypxfr-zeroresp.patch
 Patch3: 	ypserv-2.13-nonedomain.patch
@@ -106,7 +105,10 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
-* Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.3.5-12
+* Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 4.1-4
+- optimization the spec
+
+* Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 4.1-3
 - delete unused patch
 
 * Thu Nov 7 2019 openEuler Buildteam <buildteam@openeuler.org> - 4.1-2

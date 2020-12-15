@@ -1,9 +1,9 @@
 Name:		ypserv
 Version:	4.1
-Release:        4
+Release:        5
 Summary:	The NIS server
 License:	GPLv2
-URL:		http://www.linux-nis.org/nis/ypserv/index.html
+URL:		https://github.com/thkukuk/ypserv
 Source0:	https://github.com/thkukuk/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1: 	ypserv.service
 Source2: 	yppasswdd.service
@@ -105,6 +105,12 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
+* Tue Dec 15 2020 xihaochen <xihaochen@huawei.com> - 4.1-5
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:update url
+
 * Sat Jan 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 4.1-4
 - optimization the spec
 

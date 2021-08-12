@@ -1,6 +1,6 @@
 Name:		ypserv
 Version:	4.1
-Release:        5
+Release:        6
 Summary:	The NIS server
 License:	GPLv2
 URL:		https://github.com/thkukuk/ypserv
@@ -22,7 +22,7 @@ Patch8: 	ypserv-2.31-netgrprecur.patch
 Patch9: 	ypserv-4.0-headers.patch 
 Patch10: 	ypserv-4.0-selinux-context.patch 
 
-BuildRequires:	gcc git systemd libxslt autoconf automake 
+BuildRequires:	gcc systemd libxslt autoconf automake 
 BuildRequires:	docbook-style-xsl tokyocabinet-devel libnsl2-devel
 BuildRequires:	libtirpc-devel systemd-devel libselinux-devel
 Requires: 	 tokyocabinet gawk make portmap bash >= 2.0
@@ -44,7 +44,7 @@ BuildArch:	noarch
 The help package contains doc files for ypserv.
 
 %prep
-%autosetup -n %{name}-%{version} -p1 -S git
+%autosetup -n %{name}-%{version} -p1
 rm -f etc/netgroup.5 etc/ypserv.conf.5 makedbm/makedbm.8 mknetid/mknetid.8
 autoreconf -i
 
@@ -105,6 +105,9 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
+* Thu Aug 12 2021 yanglu <yanglu72@huawei.com> - 4.1-6
+- DESC:delete -S git from %autosetup,and delete BuildRequires git
+
 * Tue Dec 15 2020 xihaochen <xihaochen@huawei.com> - 4.1-5
 - Type:requirement
 - ID:NA

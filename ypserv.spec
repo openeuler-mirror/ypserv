@@ -1,6 +1,6 @@
 Name:		ypserv
 Version:	4.2
-Release:	1
+Release:	2
 Summary:	The NIS server
 License:	GPLv2
 URL:		https://github.com/thkukuk/ypserv
@@ -51,6 +51,10 @@ autoreconf -i
 %build
 cp etc/README etc/README.etc
 export CFLAGS="$RPM_OPT_FLAGS -fpic"
+
+%if "%toolchain" == "clang"
+    export CFLAGS="$CFLAGS -Wno-error=strict-prototypes"
+%endif
 
 %configure --enable-checkroot --enable-fqdn --libexecdir=%{_libdir}/yp \
            --with-dbmliborder=tokyocabinet --localstatedir=%{_localstatedir} --with-selinux
@@ -105,6 +109,12 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
+* Thu Apr 20 2023 jammyjellyfish <jammyjellyfish255@outlook.com> - 4.2-2
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:Fix clang build error
+
 * Tue Nov 15 2022 xingwei <xingwei14@h-partners.com> - 4.2-1
 - Type:requirement
 - ID:NA

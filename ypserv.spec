@@ -1,6 +1,6 @@
 Name:		ypserv
-Version:	4.1
-Release:        6
+Version:	4.2
+Release:	1
 Summary:	The NIS server
 License:	GPLv2
 URL:		https://github.com/thkukuk/ypserv
@@ -105,6 +105,12 @@ install -m 644 etc/ypserv.conf %{buildroot}/%{_sysconfdir}
 %{_mandir}/*/*
 
 %changelog
+* Tue Nov 15 2022 xingwei <xingwei14@h-partners.com> - 4.2-1
+- Type:requirement
+- ID:NA
+- SUG:NA
+- DESC:upgrade ypserv to 4.2
+
 * Thu Aug 12 2021 yanglu <yanglu72@huawei.com> - 4.1-6
 - DESC:delete -S git from %autosetup,and delete BuildRequires git
 
